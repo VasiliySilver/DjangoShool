@@ -1,6 +1,6 @@
 # Здесь будут храниться уроки по Djanogo от Django School
 
-  [YouTube](https://www.youtube.com/channel/UC_hPYclmFCIENpMUHpPY8FQ)https://www.youtube.com/channel/UC_hPYclmFCIENpMUHpPY8FQ)
+  [YouTube - канал Django School](https://www.youtube.com/channel/UC_hPYclmFCIENpMUHpPY8FQ)
   
   ---
 
