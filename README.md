@@ -27,7 +27,7 @@
 > python manage.py startapp movies
 - в movies создаем два фалйа
 > urls.py
-form.py
+> form.py
 
 ### Урок 4 Создание моделей
 - создаем модели movies/models.py
