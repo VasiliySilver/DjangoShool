@@ -182,9 +182,107 @@
             class Meta:
                 verbose_name = "Отзыв"
                 verbose_name_plural = "Отзывы"
+- добавляем наше приложение в настройках (mysite/settings.py)
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'movies.apps.MoviesConfig',
+        ]
+        
+- загружаем библиотеку Pillow
+> pip install pillow
 
-### Урок 5
-### Урок 6
+- далее создаем файл миграции в movies migrations
+> python manage.py makemigrations movies
+
+        Миграции это что-то вроде системы контроля версий для нашей базы данных
+- применяем миграции создаются таблици в нашей базе данных
+> python manage.py migrate
+### Урок 5 Таблицы в базе данных и файлы миграций
+- находим файл
+> db.sqlite3
+- щелчок правой кнопкой мыши
+> Open SQLite DataBase
+### Урок 6 создание и вывод фильмов на сайт
+- открыть файл movies/admin.py
+- зарегистрируем в нём наши модели
+        from django.contrib import admin
+        from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Reviews
+
+        admin.site.register(Category)
+        admin.site.register(Genre)
+        admin.site.register(Movie)
+        admin.site.register(MovieShots)
+        admin.site.register(Actor)
+        admin.site.register(Rating)
+        admin.site.register(RatingStar)
+        admin.site.register(Reviews)
+
+- создаем superuser
+> python manage.py createsuperuser
+
+        Username (leave blank to use 'lenav'): lenav
+        Email address:
+        Password:
+        Password (again):
+        This password is too short. It must contain at least 8 characters.
+        This password is too common.
+        Bypass password validation and create user anyway? [y/N]: y
+        Superuser created successfully.
+        
+- запустим сервер
+> python manage.py runserver
+
+- меняем язык на русский
+> mysite/setting.py
+
+        LANGUAGE_CODE = 'ru'
+
+- добавляем категорию фильмы
+        Фильмы
+
+        Все фильмы мира
+
+        movie
+
+- добавляем жанры
+      Комедия
+
+      Комедии
+
+      comedy
+---
+      Боевик
+
+      Боевики
+
+      action_film
+- создаем дирректорию media в главной папке
+- прописываем ее местоположение в настройках mysite/settings.py
+        MEDIA_URL = '/media/'
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+- а так же в файле django_movie/urls.py
+        if settings.DEBUG:
+            urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+            
+- добавляем актёров и режиссеров
+
+        Джеки Чан
+        65
+        Гонконгский актёр, каскадёр, кинорежиссёр, продюсер, сценарист, постановщик трюков и боевых сцен, певец, филантроп, мастер боевых искусств. Посол доброй воли ЮНИСЕФ. Кавалер ордена Британской империи, главный режиссёр Чанчуньской киностудии - старейшей киностудии в КНР.
+  ---
+        Арнольд Шварцнегер
+        72
+        Американский культурист, предприниматель, актёр, продюсер и политический деятель австрийского происхождения. 38-й губернатор Калифорнии
+  ---
+  
+        
+
+
 ### Урок 7
 ### Урок 8
 ### Урок 9
