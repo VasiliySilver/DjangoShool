@@ -13,20 +13,20 @@
 ### Урок 2 Обзор и создание проекта django 3 
 - создаем проект с виртуальной средой
 - устанавливаем Django в командной строке в нашей папке лучше в pyCharm
-pip install django
+> pip install django
 - создаем проект
-django-admin stratproject mysite
-cd nameproject
+> django-admin stratproject mysite
+> cd nameproject
 - создаем миграции
-python manage.py migrate
+> python manage.py migrate
 - проверяем сервер
-- python manage.py runserver
+> python manage.py runserver
 Теперь нужно открыть в браузере http://127.0.0.1:8000/
 ### Урок 3 Обзор и создание приложения 
 - создаем наше приложение
-python manage.py startapp movies
+> python manage.py startapp movies
 - в movies создаем два фалйа
-urls.py
+> urls.py
 form.py
 
 ### Урок 4 Создание моделей
