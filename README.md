@@ -182,7 +182,9 @@
             class Meta:
                 verbose_name = "Отзыв"
                 verbose_name_plural = "Отзывы"
+                
 - добавляем наше приложение в настройках (mysite/settings.py)
+
         INSTALLED_APPS = [
             'django.contrib.admin',
             'django.contrib.auth',
@@ -192,7 +194,7 @@
             'django.contrib.staticfiles',
             'movies.apps.MoviesConfig',
         ]
-        
+
 - загружаем библиотеку Pillow
 > pip install pillow
 
